@@ -1,0 +1,166 @@
+:root {
+  color-scheme: light;
+  --ink: #18251d;
+  --muted: #5d6b62;
+  --line: #dbe5dd;
+  --accent: #0d6b45;
+  --accent-soft: #eaf6ef;
+  --paper: #ffffff;
+  --background: #f4f7f4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--ink);
+  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.65;
+}
+
+a {
+  color: var(--accent);
+}
+
+.shell {
+  width: min(960px, calc(100% - 32px));
+  margin: 32px auto;
+}
+
+.topbar,
+.card {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  box-shadow: 0 18px 50px rgb(22 43 29 / 8%);
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px 22px;
+  border-radius: 18px 18px 0 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--ink);
+  font-size: 1.15rem;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 11px;
+  background: var(--ink);
+  color: white;
+  font-size: 1.35rem;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+nav a {
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.card {
+  padding: clamp(26px, 6vw, 64px);
+  border-top: 0;
+  border-radius: 0 0 18px 18px;
+}
+
+h1,
+h2 {
+  line-height: 1.2;
+}
+
+h1 {
+  max-width: 760px;
+  margin: 0 0 18px;
+  font-size: clamp(2rem, 6vw, 3.8rem);
+  letter-spacing: -0.045em;
+}
+
+h2 {
+  margin-top: 2.1em;
+  font-size: 1.35rem;
+}
+
+p,
+li {
+  max-width: 76ch;
+}
+
+.lead {
+  margin-bottom: 32px;
+  color: var(--muted);
+  font-size: 1.15rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 28px 0 40px;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 16px;
+  border: 1px solid var(--accent);
+  border-radius: 9px;
+  background: var(--accent);
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.button.secondary {
+  background: white;
+  color: var(--accent);
+}
+
+.note {
+  padding: 16px 18px;
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  background: var(--accent-soft);
+}
+
+.meta,
+footer {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+footer {
+  padding: 20px 4px;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .shell {
+    width: min(100% - 20px, 960px);
+    margin: 10px auto;
+  }
+}
